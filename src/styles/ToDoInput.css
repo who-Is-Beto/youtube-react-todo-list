@@ -1,0 +1,24 @@
+:root{
+  --inputBackground:  rgba(110, 110, 110, 0.445);
+  --textInputColor: rgb(194, 194, 194);
+}
+
+.input__container{
+  min-width: 100%;
+  text-align: center;
+}
+
+.input__container input {
+  width: 60%;
+  outline: none ;
+  padding: 0 12px;
+  height: 30px;
+  color: var(--textInputColor);
+  border: none;
+  border-radius: 14px;
+  background-color: var(--inputBackground);
+}
+
+.input__container input::placeholder{
+  color: var(--textInputColor);
+}

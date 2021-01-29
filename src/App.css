@@ -1,4 +1,11 @@
-.App {
-  text-align: center;
+.wrapper{
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 14px;
 }
 
+.items__container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

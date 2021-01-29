@@ -5,8 +5,10 @@ import TodoList from './components/TodoList'
 function App() {
   return (
     <>
-      <ToDoInput />
-      <TodoList />
+      <div className="wrapper">
+        <ToDoInput />
+        <TodoList />
+      </div>
     </>
   );
 }

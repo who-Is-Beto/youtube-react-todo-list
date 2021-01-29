@@ -1,0 +1,73 @@
+:root{
+  --textInputColor: rgb(194, 194, 194);
+  --shadowColor:  rgba(116, 116, 116, 0.657);
+}
+
+.todo__item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  width: 700px;
+  box-shadow: 2px 0px 7px 0px var(--shadowColor);
+  padding: 0 14px;
+}
+
+.options{
+  min-width: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.options button{
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  font-size: 16px;
+  color: var(--textInputColor);
+}
+
+.done{
+  color: rgba(90, 241, 136, 0.842);
+}
+
+.options button:hover{
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 740px){
+  .todo__item{
+    width: 400px;
+  }
+  .options button{
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .todo__item{
+    width: 300px;
+  }
+  
+}
+
+@media screen and (max-width: 400px){
+  .todo__item{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 0 14px;
+    border-bottom: 1px solid var(--shadowColor);
+  }
+
+  .options button{
+    font-size: 22px;
+  }
+}
