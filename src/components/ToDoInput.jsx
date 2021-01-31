@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState } from 'react'
 import { ToDoContext } from '../ToDoContext'
 import '../styles/ToDoInput.css'
 
@@ -12,20 +12,26 @@ function ToDoInout() {
 
   const addTodo = (event) => {
     event.preventDefault()
-    setTodos((prevTodos) => [
-      ...prevTodos,
-      {
-        content: inputValue,
-        status: false,
-        id: Math.random() * 1000,
-      },
-    ])
+    if (inputValue === '') {
+      alert('You most to write something in the input D:')
+    } else {
+      setTodos((prevTodos) => [
+        ...prevTodos,
+        {
+          content: inputValue,
+          status: false,
+          id: Math.random() * 1000,
+        },
+      ])
+      setInputValue('')
+    }
   }
   return (
     <>
       <div className="input__container">
         <form onSubmit={addTodo}>
           <input
+            value={inputValue}
             type="text"
             placeholder='Plan?'
             onChange={updateInputValue}
