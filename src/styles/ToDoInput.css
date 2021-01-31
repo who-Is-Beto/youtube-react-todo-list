@@ -1,6 +1,10 @@
 :root{
   --inputBackground:  rgba(110, 110, 110, 0.445);
-  --textInputColor: rgb(194, 194, 194);
+  --selectBackground:  rgba(184, 184, 184, 0.445);
+  --selectDarkBackground:  rgba(116, 116, 116, 0.445);
+  --optionBackground:  rgb(73, 73, 73);
+  --textInputColor: rgb(216, 216, 216);
+  --textbuttonColorFocus: rgba(88, 88, 88, 0.644);
 }
 
 .input__container{
@@ -21,4 +25,56 @@
 
 .input__container input::placeholder{
   color: var(--textInputColor);
+}
+
+.input__button{
+  border: none;
+  background-color: var(--selectBackground);
+  height: 30px;
+  width: 30px;
+  margin-left: 8px;
+  color: var(--textInputColor);
+  border-radius: 50%;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  outline: none;
+}
+
+.input__button:hover{
+  transform: scale(1.1);
+  border-radius: 8px;
+}
+
+.input__button:focus{
+  color: var(--textbuttonColorFocus);
+  background-color: var(--textInputColor);
+}
+
+select {
+  margin-top: 24px;
+  background-color: var(--selectDarkBackground);
+  color: var(--textInputColor);
+  border: 1px solid var(--textInputColor);
+  font-size: 14px;
+  height: 30px;
+  padding: 5px;
+  width: 50%;
+  transition-duration: 0.5s;
+  border-radius: 14px;
+  padding: 0 14px;
+}
+
+option{
+  background-color: var(--optionBackground);
+}
+
+select:focus{ 
+  width: 50%;
+  outline: none;
+}
+
+@media screen and (max-width: 500px){
+  select{
+    width: 60%;
+  }
 }

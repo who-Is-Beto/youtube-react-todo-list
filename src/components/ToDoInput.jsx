@@ -36,7 +36,7 @@ function ToDoInout() {
             placeholder='Plan?'
             onChange={updateInputValue}
           />
-          <button><i className="fas fa-check"></i></button>
+          <button className='input__button'><i className="fas fa-check"></i></button>
         </form>
 
         <select name="todos" className='filter__todo'>
