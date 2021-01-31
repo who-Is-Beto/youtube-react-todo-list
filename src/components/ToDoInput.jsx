@@ -1,10 +1,37 @@
+import { useContext, useState } from "react";
+import { ToDoContext } from '../ToDoContext'
 import '../styles/ToDoInput.css'
 
 function ToDoInout() {
+  const [, setTodos] = useContext(ToDoContext)
+  const [inputValue, setInputValue] = useState('')
+
+  const updateInputValue = (event) => {
+    setInputValue(event.target.value)
+  }
+
+  const addTodo = (event) => {
+    event.preventDefault()
+    setTodos((prevTodos) => [
+      ...prevTodos,
+      {
+        content: inputValue,
+        status: false,
+        id: Math.random() * 1000,
+      },
+    ])
+  }
   return (
     <>
       <div className="input__container">
-        <input type="text" placeholder='Plan?' />
+        <form onSubmit={addTodo}>
+          <input
+            type="text"
+            placeholder='Plan?'
+            onChange={updateInputValue}
+          />
+          <button><i className="fas fa-check"></i></button>
+        </form>
 
         <select name="todos" className='filter__todo'>
           <option value="all">All</option>
