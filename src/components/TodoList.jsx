@@ -9,7 +9,10 @@ function TodoList() {
   return (
     <div className='todo__list'>
       {todos.map(item => (
-        <ToDoItem content={item.content} key={item.id} />
+        <ToDoItem
+          item={item}
+          key={item.id}
+        />
       ))}
     </div>
   )

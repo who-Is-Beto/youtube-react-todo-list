@@ -1,6 +1,9 @@
 :root{
   --textInputColor: rgb(194, 194, 194);
+  --completedText: rgb(53, 53, 53);
   --shadowColor:  rgba(116, 116, 116, 0.657);
+  --buttonGreen: rgba(90, 241, 136, 0.842);
+  --completedBackground: rgba(204, 76, 255, 0.842);
 }
 
 .todo__item{
@@ -10,6 +13,19 @@
   margin-bottom: 14px;
   border-radius: 8px;
   width: 700px;
+  box-shadow: 2px 0px 7px 0px var(--shadowColor);
+  padding: 0 14px;
+}
+
+.item__completed{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  width: 700px;
+  color: var(--completedText);
+  background-color: var(--completedBackground);
   box-shadow: 2px 0px 7px 0px var(--shadowColor);
   padding: 0 14px;
 }
@@ -31,15 +47,23 @@
 }
 
 .done{
-  color: rgba(90, 241, 136, 0.842);
+  color: var(--completedText);
 }
-
+.undone{
+  color: var(--buttonGreen);
+}
+.trash:hover{
+  color: red;
+}
 .options button:hover{
   transform: scale(1.2);
 }
 
 @media screen and (max-width: 740px){
   .todo__item{
+    width: 400px;
+  }
+  .item__completed{
     width: 400px;
   }
   .options button{
@@ -51,11 +75,26 @@
   .todo__item{
     width: 300px;
   }
+
+  .item__completed{
+    width: 300px;
+  }
   
 }
 
 @media screen and (max-width: 400px){
   .todo__item{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    border-radius: 0px;
+    box-shadow: none;
+    padding: 0 14px;
+    border-bottom: 1px solid var(--shadowColor);
+  }
+  .item__completed{
     width: 300px;
     display: flex;
     align-items: center;
