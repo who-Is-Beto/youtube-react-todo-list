@@ -1,14 +1,11 @@
-import { useContext } from "react";
-import { ToDoContext } from '../ToDoContext'
 import ToDoItem from './TodoItem'
 import '../styles/ToDoList.css'
 
-function TodoList() {
-  const [todos,] = useContext(ToDoContext)
+function TodoList({ filteredTodos }) {
 
   return (
     <div className='todo__list'>
-      {todos.map(item => (
+      {filteredTodos.map(item => (
         <ToDoItem
           item={item}
           key={item.id}

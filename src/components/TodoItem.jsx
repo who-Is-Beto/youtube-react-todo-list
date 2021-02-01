@@ -24,6 +24,8 @@ function ToDoItem({ item }) {
     setTodos(todos.filter((el) => el.id !== item.id))
   }
 
+
+
   return (
     <div className={item.status ? 'item__completed' : 'todo__item'}>
       <p>{item.content}</p>

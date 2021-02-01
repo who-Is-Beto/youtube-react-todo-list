@@ -83,4 +83,8 @@ select:focus{
   select{
     width: 60%;
   }
+  select:focus{ 
+    width: 80%;
+    outline: none;
+  }
 }
