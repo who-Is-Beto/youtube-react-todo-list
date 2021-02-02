@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useState, useEffect } from 'react'
 import { ToDoContext } from '../ToDoContext'
 import '../styles/ToDoInput.css'
@@ -46,8 +47,26 @@ function ToDoInout({ setStatus, status, setFilteredTodos }) {
     }
   }
 
+  const saveLocal = () => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }
+
+  const getLocal = () => {
+    if (localStorage.getItem('todos') === null) {
+      localStorage.setItem('todos', JSON.stringify([]))
+    } else {
+      let todoLocal = JSON.parse(localStorage.getItem('todos'))
+      setTodos(todoLocal)
+    }
+  }
+
+  useEffect(() => {
+    getLocal()
+  }, [])
+
   useEffect(() => {
     handleFilter()
+    saveLocal()
   }, [todos, status])
   return (
     <>
