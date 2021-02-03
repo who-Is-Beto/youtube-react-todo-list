@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useState, useEffect } from 'react'
+import Swal from 'sweetalert2'
 import { ToDoContext } from '../ToDoContext'
 import '../styles/ToDoInput.css'
 
@@ -14,7 +15,11 @@ function ToDoInout({ setStatus, status, setFilteredTodos }) {
   const addTodo = (event) => {
     event.preventDefault()
     if (inputValue === '') {
-      alert('You most to write something in the input D:')
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'You must to write something!',
+      })
     } else {
       setTodos((prevTodos) => [
         ...prevTodos,
@@ -24,6 +29,13 @@ function ToDoInout({ setStatus, status, setFilteredTodos }) {
           id: Math.random() * 1000,
         },
       ])
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Your work has been saved',
+        showConfirmButton: false,
+        timer: 1000
+      })
       setInputValue('')
     }
   }
@@ -60,10 +72,6 @@ function ToDoInout({ setStatus, status, setFilteredTodos }) {
     }
   }
 
-  const handleDeleteInputContent = () => {
-    setInputValue('')
-  }
-
   useEffect(() => {
     getLocal()
   }, [])
@@ -76,22 +84,15 @@ function ToDoInout({ setStatus, status, setFilteredTodos }) {
     <>
       <div className="input__container">
         <form onSubmit={addTodo}>
-          <label>
-            <i className="fas fa-pen pen"></i>
-            <input
-              value={inputValue}
-              type="text"
-              placeholder='Plan?'
-              onChange={updateInputValue}
-            />
-          </label>
-          {inputValue &&
-            <button
-              onClick={handleDeleteInputContent}
-              className='delete__input-button'
-              aria-label='Delete the input content'>x</button>
-          }
-
+          <label htmlFor='input' />
+          <i className="fas fa-pen pen"></i>
+          <input
+            id='input'
+            value={inputValue}
+            type="text"
+            placeholder='Plan?'
+            onChange={updateInputValue}
+          />
 
           <button className='input__button' aria-label="Submit to do element">
             <i className="fas fa-plus"></i>

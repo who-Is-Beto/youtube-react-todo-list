@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import './App.css';
 import ToDoInput from './components/ToDoInput'
 import TodoList from './components/TodoList'
 import { ToDoProvider } from './ToDoContext'
+import Navbar from './components/Nav'
+import './App.css';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <ToDoProvider>
+      <Navbar />
       <div className="wrapper">
         <ToDoInput
           setStatus={setStatus}
