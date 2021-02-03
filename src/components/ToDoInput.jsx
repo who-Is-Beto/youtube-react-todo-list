@@ -60,6 +60,10 @@ function ToDoInout({ setStatus, status, setFilteredTodos }) {
     }
   }
 
+  const handleDeleteInputContent = () => {
+    setInputValue('')
+  }
+
   useEffect(() => {
     getLocal()
   }, [])
@@ -72,16 +76,29 @@ function ToDoInout({ setStatus, status, setFilteredTodos }) {
     <>
       <div className="input__container">
         <form onSubmit={addTodo}>
-          <input
-            value={inputValue}
-            type="text"
-            placeholder='Plan?'
-            onChange={updateInputValue}
-          />
-          <button className='input__button'><i className="fas fa-check"></i></button>
+          <label>
+            <i className="fas fa-pen pen"></i>
+            <input
+              value={inputValue}
+              type="text"
+              placeholder='Plan?'
+              onChange={updateInputValue}
+            />
+            {inputValue &&
+              <button
+                onClick={handleDeleteInputContent}
+                className='delete__input-button'
+                data-message='Delete the input content'>x</button>
+            }
+          </label>
+
+
+          <button className='input__button' data-message="Submit to do element">
+            <i className="fas fa-plus"></i>
+          </button>
         </form>
 
-        <select onChange={handleSelect} name="todos" className='filter__todo'>
+        <select onChange={handleSelect} name="To Do Filter" className='filter__todo'>
           <option value="all">All</option>
           <option value="completed">Completed</option>
           <option value="uncompleted">Uncompleted</option>

@@ -9,7 +9,6 @@ function ToDoItem({ item }) {
   const handleCompleted = () => {
     setTodos(todos.map((element) => {
       if (element.id === item.id) {
-        console.log(element)
         return {
           ...element,
           status: !element.status
@@ -24,18 +23,32 @@ function ToDoItem({ item }) {
     setTodos(todos.filter((el) => el.id !== item.id))
   }
 
-
-
   return (
     <div className={item.status ? 'item__completed' : 'todo__item'}>
-      <p>{item.content}</p>
+
+      <div className="content">
+        <p>{item.content}</p>
+      </div>
 
       <div className="options">
-        <button className={item.status ? 'done' : 'undone'} type='button' onClick={handleCompleted}>
-          <i className="fas fa-check-circle undone"></i></button>
-        <button className='trash' type='button' onClick={deleteTodoItem} ><i className="fas fa-trash-alt"></i></button>
+        <button
+          className={item.status ? 'done' : 'undone'}
+          type='button'
+          onClick={handleCompleted}
+          data-message="Complete to do elemet"
+        >
+          <i className='fas fa-check-circle'></i>
+
+        </button>
+        <button
+          className={item.status ? 'trashDone' : 'trash'}
+          type='button'
+          onClick={deleteTodoItem}
+          data-message="Delete to do element"
+        ><i className="fas fa-trash-alt"></i></button>
+
       </div>
-    </div>
+    </div >
   )
 }
 
