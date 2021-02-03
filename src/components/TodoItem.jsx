@@ -35,7 +35,7 @@ function ToDoItem({ item }) {
           className={item.status ? 'done' : 'undone'}
           type='button'
           onClick={handleCompleted}
-          data-message="Complete to do elemet"
+          aria-label="Complete to do elemet"
         >
           <i className='fas fa-check-circle'></i>
 
@@ -44,7 +44,7 @@ function ToDoItem({ item }) {
           className={item.status ? 'trashDone' : 'trash'}
           type='button'
           onClick={deleteTodoItem}
-          data-message="Delete to do element"
+          aria-label="Delete to do element"
         ><i className="fas fa-trash-alt"></i></button>
 
       </div>

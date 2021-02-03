@@ -88,12 +88,12 @@ function ToDoInout({ setStatus, status, setFilteredTodos }) {
               <button
                 onClick={handleDeleteInputContent}
                 className='delete__input-button'
-                data-message='Delete the input content'>x</button>
+                aria-label='Delete the input content'>x</button>
             }
           </label>
 
 
-          <button className='input__button' data-message="Submit to do element">
+          <button className='input__button' aria-label="Submit to do element">
             <i className="fas fa-plus"></i>
           </button>
         </form>
