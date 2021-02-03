@@ -84,13 +84,13 @@ function ToDoInout({ setStatus, status, setFilteredTodos }) {
               placeholder='Plan?'
               onChange={updateInputValue}
             />
-            {inputValue &&
-              <button
-                onClick={handleDeleteInputContent}
-                className='delete__input-button'
-                aria-label='Delete the input content'>x</button>
-            }
           </label>
+          {inputValue &&
+            <button
+              onClick={handleDeleteInputContent}
+              className='delete__input-button'
+              aria-label='Delete the input content'>x</button>
+          }
 
 
           <button className='input__button' aria-label="Submit to do element">
