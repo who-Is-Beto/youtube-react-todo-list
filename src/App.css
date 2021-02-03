@@ -1,7 +1,6 @@
 .wrapper{
   max-width: 800px;
-  margin: 0 auto;
-  margin-top: 14px;
+  margin: 14px auto 22px;
 }
 
 .items__container{
