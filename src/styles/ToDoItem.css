@@ -96,6 +96,22 @@
   font-weight: bolder;
 }
 
+/* swal2-modal swal2-icon-success swal2-show
+ */.swal2-popup {
+  background-color: #121212;
+  color: white;
+}
+.swal2-title {
+  color: rgb(219, 219, 219);
+}
+.swal2-html-container{    
+  color: rgb(219, 219, 219);
+}
+
+.swal2-styled.swal2-confirm{
+  background-color: var(--buttonGreen);
+}
+
 @media screen and (max-width: 740px){
   .todo__item, .item__completed{
     max-width: 400px;
@@ -114,21 +130,7 @@
 
 }
 
-/* swal2-modal swal2-icon-success swal2-show
- */.swal2-popup {
-    background-color: #121212;
-    color: white;
-  }
-  .swal2-title {
-    color: rgb(219, 219, 219);
-  }
-  .swal2-html-container{    
-    color: rgb(219, 219, 219);
-  }
 
-  .swal2-styled.swal2-confirm{
-    background-color: var(--buttonGreen);
-  }
 
 @media screen and (max-width: 500px){
   .todo__item, .item__completed{
