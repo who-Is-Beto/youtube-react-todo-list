@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/youtube-react-todo-list/static/css/main.77699b37.chunk.css",
+    "main.js": "/youtube-react-todo-list/static/js/main.1acc6355.chunk.js",
+    "main.js.map": "/youtube-react-todo-list/static/js/main.1acc6355.chunk.js.map",
+    "runtime-main.js": "/youtube-react-todo-list/static/js/runtime-main.2b54a744.js",
+    "runtime-main.js.map": "/youtube-react-todo-list/static/js/runtime-main.2b54a744.js.map",
+    "static/js/2.53b07f81.chunk.js": "/youtube-react-todo-list/static/js/2.53b07f81.chunk.js",
+    "static/js/2.53b07f81.chunk.js.map": "/youtube-react-todo-list/static/js/2.53b07f81.chunk.js.map",
+    "index.html": "/youtube-react-todo-list/index.html",
+    "static/css/main.77699b37.chunk.css.map": "/youtube-react-todo-list/static/css/main.77699b37.chunk.css.map",
+    "static/js/2.53b07f81.chunk.js.LICENSE.txt": "/youtube-react-todo-list/static/js/2.53b07f81.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2b54a744.js",
+    "static/js/2.53b07f81.chunk.js",
+    "static/css/main.77699b37.chunk.css",
+    "static/js/main.1acc6355.chunk.js"
+  ]
+}
